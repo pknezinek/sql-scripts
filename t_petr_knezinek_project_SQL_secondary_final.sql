@@ -8,7 +8,9 @@ CREATE TABLE t_petr_knezinek_project_SQL_secondary_final AS
 	SELECT
 		c.country,
 		e."year",
-		e.gdp AS HDP
+		e.gdp AS HDP,
+		e.gini,
+		e.population
 	FROM countries c LEFT JOIN economies e
 	ON c.country = e.country
 	WHERE c.continent = 'Europe'

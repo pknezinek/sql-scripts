@@ -1,9 +1,8 @@
--- 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 -- Pro získání procentuálních rozdílů cen potravin v jednotlivých letech
 -- je třeba upravit tabulku s potravinami a přidat sloupec s výpočtem v procentech 
 -- (((nová cena)-(předchozí cena)) / (předchozí cena)) * 100%.
 
-CREATE VIEW zkusebni AS 
+CREATE VIEW procentuelni_narust_a_pokles AS 
 SELECT 
 	AVG(tpkpspf.average_food_price) AS prumerna_cena_za_rok,
 	tpkpspf."year",
@@ -16,10 +15,10 @@ GROUP BY tpkpspf.food_name, tpkpspf."year"
 ORDER BY tpkpspf.food_name, tpkpspf."year"
 
 SELECT 
-	z.food_name,
-	SUM(z.mezirocne)
-FROM zkusebni z
-GROUP BY z.food_name
+	pnap.food_name,
+	SUM(pnap.mezirocne)
+FROM procentuelni_narust_a_pokles pnap
+GROUP BY pnap.food_name
 
 -- Z porovnání za celé období je patrné, že tyto potraviny celkově zlevnily:
 -- Cukr krystalový, Konzumní brambory, Rajská jablka červená kulatá (nejvíce).

@@ -1,3 +1,4 @@
+-- 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
 -- Vyselektujeme z tabulky t_petr_knezinek_project_SQL_primary_final potřebné údaje pro chléb a mléko a roky 2006 a 2018.
 -- Následně spočítáme množství, které lze v daných letech koupit.
 

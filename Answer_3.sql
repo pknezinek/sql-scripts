@@ -1,3 +1,4 @@
+-- 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 -- Pro získání procentuálních rozdílů cen potravin v jednotlivých letech
 -- je třeba upravit tabulku s potravinami a přidat sloupec s výpočtem v procentech 
 -- (((nová cena)-(předchozí cena)) / (předchozí cena)) * 100%.

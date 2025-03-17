@@ -2,10 +2,10 @@
 -- Nalezneme průnik společných období (roky 2006 až 2018)
 
 SELECT * FROM czechia_price cp
-ORDER BY cp.date_from
+ORDER BY cp.date_from;
 
 SELECT * FROM czechia_payroll cp
-ORDER BY cp.payroll_year
+ORDER BY cp.payroll_year;
 
 -- Tabulku t_petr_knezinek_project_SQL_primary_final vytvoříme
 -- spojením tabulek přes společná období a připojíme tabulky
@@ -40,4 +40,4 @@ INNER JOIN (
 		ORDER BY payroll_year
 		)
 ON YEAR=payroll_year
-ORDER BY "year"
+ORDER BY "year";

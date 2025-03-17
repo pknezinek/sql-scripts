@@ -41,6 +41,3 @@ INNER JOIN (
 		)
 ON YEAR=payroll_year
 ORDER BY "year"
-
-
-

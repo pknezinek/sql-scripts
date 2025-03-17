@@ -11,11 +11,11 @@ SELECT
 FROM "t_petr_knezinek_project_SQL_primary_final" tpkpspf
 WHERE tpkpspf."year" = 2006 AND tpkpspf.food_name = 'Chléb konzumní kmínový' OR 
 	tpkpspf."year" = 2018 AND tpkpspf.food_name = 'Chléb konzumní kmínový'
-GROUP BY tpkpspf.average_food_price, tpkpspf."year", tpkpspf.food_name
+GROUP BY tpkpspf.average_food_price, tpkpspf."year", tpkpspf.food_name;
 
 SELECT 
 	pay/bread_price AS pocet_bochniku
-FROM average_price_of_bread
+FROM average_price_of_bread;
 
 -- V roce 2006 si člověk s průměrnou mzdou mohl koupit 1 271 bochníků chleba
 -- a v roce 2018 to bylo o něco více, tedy 1 332 bochníků chleba.
@@ -29,11 +29,11 @@ SELECT
 FROM "t_petr_knezinek_project_SQL_primary_final" tpkpspf
 WHERE tpkpspf."year" = 2006 AND tpkpspf.food_name = 'Mléko polotučné pasterované' OR 
 	tpkpspf."year" = 2018 AND tpkpspf.food_name = 'Mléko polotučné pasterované'
-GROUP BY tpkpspf.average_food_price, tpkpspf."year", tpkpspf.food_name
+GROUP BY tpkpspf.average_food_price, tpkpspf."year", tpkpspf.food_name;
 
 SELECT 
 	pay/apom.milk_price AS pocet_bochniku
-FROM average_price_of_milk apom
+FROM average_price_of_milk apom;
 
 -- V roce 2006 si člověk s průměrnou mzdou mohl koupit 1 453 litrů mléka
 -- a v roce 2018 to bylo o něco více, tedy 1 599 litrů mléka.

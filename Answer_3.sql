@@ -13,13 +13,13 @@ SELECT
 	AVG(tpkpspf.average_food_price)) * 100) AS mezirocne
 FROM "t_petr_knezinek_project_SQL_primary_final" tpkpspf
 GROUP BY tpkpspf.food_name, tpkpspf."year"
-ORDER BY tpkpspf.food_name, tpkpspf."year"
+ORDER BY tpkpspf.food_name, tpkpspf."year";
 
 SELECT 
 	pnap.food_name,
 	SUM(pnap.mezirocne)
 FROM procentuelni_narust_a_pokles pnap
-GROUP BY pnap.food_name
+GROUP BY pnap.food_name;
 
 -- Z porovnání za celé období je patrné, že tyto potraviny celkově zlevnily:
 -- Cukr krystalový, Konzumní brambory, Rajská jablka červená kulatá (nejvíce).

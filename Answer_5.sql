@@ -2,7 +2,7 @@
 -- Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to 
 -- na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
 
-SELECT * FROM "t_petr_knezinek_project_SQL_secondary_final" tpkpssf
+SELECT * FROM "t_petr_knezinek_project_SQL_secondary_final" tpkpssf;
 
 -- Použijeme vytvořenou tabulku (t_petr_knezinek_project_SQL_secondary_final)
 -- a zjistíme si z ní potřebné hodnoty. Následně pomocí funkce lag() a vzorce
@@ -16,7 +16,7 @@ SELECT
 	round( ( tpkpssf.hdp - ( lag(tpkpssf.hdp) OVER (ORDER BY tpkpssf."year") ) ) /
 	( lag(tpkpssf.hdp) OVER (ORDER BY tpkpssf."year") ) * 100 )
 FROM "t_petr_knezinek_project_SQL_secondary_final" tpkpssf
-WHERE tpkpssf.country = 'Czech Republic'
+WHERE tpkpssf.country = 'Czech Republic';
 
 -- Připojíme k tomuto VIEW (hdp_percentual_change) oba dříve vytvořené VIEW (price_percentual_change; payroll_percentual_change)
 -- a pohledem zjistíme, zda růst HDP ovlivňuje mzdy nebo ceny potravin.
@@ -30,7 +30,7 @@ FROM price_percentual_change ppc
 	JOIN payroll_percentual_change ppc2
 		ON ppc."year" = ppc2.payroll_year
 	JOIN hdp_percentual_change hpc
-		ON ppc."year" = hpc."year"
+		ON ppc."year" = hpc."year";
 
 -- Zde by bylo potřeba určit, co znamená "výraznější" vzrůst HDP. Ze zjištěných dat však vyplývá, že meziročně ve zkoumaném období 
 -- neexistuje zvýšení HDP nad 10% a ani ceny potravin a mzdy zásadně nerostou při zvýšení HDP. 

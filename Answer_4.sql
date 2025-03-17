@@ -9,7 +9,7 @@ SELECT
 	round(AVG(pnap.mezirocne))
 FROM procentuelni_narust_a_pokles pnap
 GROUP BY pnap."year"
-ORDER BY pnap."year"
+ORDER BY pnap."year";
 
 -- Pro platy si vytvořím VIEW se shodnými roky a průměrným platem pro všechna odvětví v těchto letech.
 -- Následně použiji funkci lag() a vzorec pro procentuální meziroční porovnání výše mezd.
@@ -23,7 +23,7 @@ SELECT
 	( round(avg(tpkpspf.pay)) ) * 100 ) AS interannual_percentage_change
 FROM "t_petr_knezinek_project_SQL_primary_final" tpkpspf
 GROUP BY tpkpspf.payroll_year
-ORDER BY tpkpspf.payroll_year
+ORDER BY tpkpspf.payroll_year;
 
 -- JOINEM spojím obě VIEW do jedné tabulky a vidím jednoznačné srovnání.
 
@@ -32,6 +32,6 @@ SELECT
 	ppc2.round AS foodprice_change,
 	ppc.interannual_percentage_change AS payroll_change
 FROM price_percentual_change ppc2 JOIN payroll_percentual_change ppc
-ON ppc2."year" = ppc.payroll_year
+ON ppc2."year" = ppc.payroll_year;
 
 -- V žádném roce nebyl meziroční nárůst cen potravin vyšší než meziroční nárůst mezd o 10 %.

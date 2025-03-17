@@ -35,14 +35,3 @@ FROM price_percentual_change ppc2 JOIN payroll_percentual_change ppc
 ON ppc2."year" = ppc.payroll_year
 
 -- V žádném roce nebyl meziroční nárůst cen potravin vyšší než meziroční nárůst mezd o 10 %.
-
-
-
-
-
-
-
-
-
-
-

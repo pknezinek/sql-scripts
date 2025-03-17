@@ -12,11 +12,11 @@ SELECT
 			ELSE 'plat klesá'
 		END AS rust_pokles	
 FROM "t_petr_knezinek_project_SQL_primary_final" tpkpspf
-ORDER BY tpkpspf.industry_name, tpkpspf.payroll_year
+ORDER BY tpkpspf.industry_name, tpkpspf.payroll_year;
 
-SELECT * FROM rust_a_pokles_platu rapp WHERE rapp.pay != rapp.salary_difference
+SELECT * FROM rust_a_pokles_platu rapp WHERE rapp.pay != rapp.salary_difference;
 
-SELECT DISTINCT(rapp.industry_name) FROM rust_a_pokles_platu rapp
+SELECT DISTINCT(rapp.industry_name) FROM rust_a_pokles_platu rapp;
 
 -- Zde je seznam odvětví, ve kterých byl zaznamenán alespoň jeden meziroční pokles mezd.
 SELECT 
@@ -25,7 +25,7 @@ FROM rust_a_pokles_platu rapp
 WHERE rapp.rust_pokles = 'plat klesá'
 	AND rapp.salary_difference IS NOT NULL
 	AND rapp.pay != rapp.salary_difference
-ORDER BY rapp.industry_name
+ORDER BY rapp.industry_name;
 
 -- Mzdy rostou po celou dobu (2006 až 2018) pouze v těchto pěti odvětvích: 
 -- 1) Administrativní a podpůrné činnosti

@@ -1,8 +1,5 @@
 -- Potřebuji spojit tabulky countries a economies, 
 -- a to (dle prozkoumání) na základě sloupce country.
-SELECT * FROM countries c
-
-SELECT * FROM economies e
 
 CREATE TABLE t_petr_knezinek_project_SQL_secondary_final AS 
 	SELECT
